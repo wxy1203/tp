@@ -450,28 +450,17 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1.  User requests to list persons.
-2.  Arrow shows a list of persons.
-3.  User requests to list tasks of a specific person in the persons list.
-4.  Arrow shows a list of task of the person.
-5.  User requests to mark a specific task in the tasks list as complete or incomplete.
-6.  Arrow marks the task as specified.
+1.  User requests to mark a task as complete.
+2.  Arrow changes the status of the given task to be complete.
+3.  Arrow shows the task to be complete.
 
     Use case ends.
 
 **Extensions**
 
-* 2a. The persons list is empty.
+* 1b. There is no task name provided.
 
-  Use case ends.
-
-* 3a. The given persons index is invalid.
-
-    * 3a1. Arrow shows an error message.
-
-      Use case resumes at step 2.
-      
-* 4a. The tasks list is empty.
+    * 1b1. Arrow shows an error message.
 
   Use case ends.
       

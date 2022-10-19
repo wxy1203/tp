@@ -5,6 +5,7 @@ import static java.util.Objects.requireNonNull;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.function.Predicate;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import seedu.address.commons.core.index.Index;
@@ -31,12 +32,16 @@ public class SortDeadlineTaskCommand extends TaskCommand {
 
     private static ArrayList<Task> tasks;
 
+    private static Logger logger = Logger.getLogger("testDemo");
+
+
     /**
      * Creates a SortDeadlineTasksCommand to list the {@code Task}s
      * with the chronological order of deadlines
      */
     public SortDeadlineTaskCommand() {
         this.tasks = new ArrayList();
+
     }
 
     @Override
@@ -48,7 +53,7 @@ public class SortDeadlineTaskCommand extends TaskCommand {
 
         model.updateFilteredTaskList(deadlinePredicate);
 
-
+        logger.warning("hello world");
 
         return new CommandResult(String.format(MESSAGE_SUCCESS, model.getFilteredTaskList().size()));
     }

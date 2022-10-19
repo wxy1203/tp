@@ -31,6 +31,7 @@ public class MarkTaskCommandTest {
         MarkTaskCommand markTaskCommand = new MarkTaskCommand(outOfBoundIndex);
 
         assertCommandFailure(markTaskCommand, model, Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
+
     }
 
     @Test

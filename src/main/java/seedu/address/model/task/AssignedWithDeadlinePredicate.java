@@ -1,14 +1,11 @@
 package seedu.address.model.task;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
-import seedu.address.commons.core.Messages;
-import seedu.address.commons.core.index.Index;
-import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
-import seedu.address.model.person.Person;
+
 
 /**
  * Tests that a {@code Task}'s assigned contacts contains a specified set of contacts.
@@ -30,7 +27,7 @@ public class AssignedWithDeadlinePredicate implements Predicate<Task> {
             if (task.getDeadline().isUnspecified()) {
                 continue;
             }
-            Task t = new Task (task.getTitle(), task.getCompleted(), task.getDeadline(), task.getAssignedContacts());
+            Task t = new Task(task.getTitle(), task.getCompleted(), task.getDeadline(), task.getAssignedContacts());
             this.tasks.add(t);
         }
     }

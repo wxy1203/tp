@@ -8,24 +8,9 @@ import java.util.regex.Pattern;
 
 import seedu.address.logic.commands.HelpCommand;
 import seedu.address.logic.commands.TaskCommand;
-import seedu.address.logic.commands.task.AddTaskCommand;
-import seedu.address.logic.commands.task.AssignTaskCommand;
-import seedu.address.logic.commands.task.DeadlineTaskCommand;
-import seedu.address.logic.commands.task.DeleteTaskCommand;
-import seedu.address.logic.commands.task.EditTaskCommand;
-import seedu.address.logic.commands.task.ListTasksCommand;
-import seedu.address.logic.commands.task.MarkTaskCommand;
-import seedu.address.logic.commands.task.UnmarkTaskCommand;
+import seedu.address.logic.commands.task.*;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.logic.parser.task.AddTaskCommandParser;
-import seedu.address.logic.parser.task.AssignTaskCommandParser;
-import seedu.address.logic.parser.task.DeadlineTaskCommandParser;
-import seedu.address.logic.parser.task.DeleteTaskCommandParser;
-import seedu.address.logic.parser.task.EditTaskCommandParser;
-import seedu.address.logic.parser.task.ListTasksCommandParser;
-import seedu.address.logic.parser.task.MarkTaskCommandParser;
-import seedu.address.logic.parser.task.UnmarkTaskCommandParser;
-
+import seedu.address.logic.parser.task.*;
 
 
 /**
@@ -67,6 +52,8 @@ public class TaskPanelParser implements Parser<TaskCommand> {
             return new DeadlineTaskCommandParser().parse(arguments);
         case EditTaskCommand.COMMAND_WORD:
             return new EditTaskCommandParser().parse(arguments);
+        case SortDeadlineTaskCommand.COMMAND_WORD:
+            return new SortDeadlineTaskCommandParser().parse(arguments);
         default:
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
         }
